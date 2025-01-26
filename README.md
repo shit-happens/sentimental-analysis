@@ -1,22 +1,50 @@
-# sentimental-analysis
-A retail firm names 'Poseidon' has employed a chatbot on its progressive web app to interact with its customers. 
-My job was to determine the core intent of the customer's interaction (query) and classify it into one of the following 10
-different tags :
-0 - order.cancellation
-1 - order.concern.delay
-2 - order.modification
-3 - order.status
-4 - product.browse
-5 - product.reviews
-6 - shipping.address.modification
-7 - shipping.plans.browse
-8 - store.browse
-9 - store.timing
+# Sentiment Analysis for Customer Queries  
 
-Queries are customer interactions with a chatbot, the tags classify them on a broader basis. To train a learning algorithm 
-on this text data, I used Long short-term memory (LSTM) which is an artificial recurrent neural network (RNN) architecture
-used in the field of deep learning. Unlike standard feedforward neural networks, LSTM has feedback connections. It can not
-only process single data points (such as images), but also entire sequences of data (such as speech or video).
+**Project Overview**  
+A retail firm named **Poseidon** has integrated a chatbot into its progressive web application to interact with customers. The goal of this project was to determine the core intent behind customer interactions (queries) and classify them into one of the following 10 predefined tags:  
 
-As per the plots of Training and Validation loss V/S epochs, it can be seen that the my model was able to achieve a pretty
-decent accuracy of 83.98% accuracy on validation set.
+| Tag ID | Intent Description              |  
+|--------|---------------------------------|  
+| 0      | Order Cancellation              |  
+| 1      | Order Concern (Delay)           |  
+| 2      | Order Modification              |  
+| 3      | Order Status Inquiry            |  
+| 4      | Product Browsing                |  
+| 5      | Product Reviews                 |  
+| 6      | Shipping Address Modification   |  
+| 7      | Shipping Plans Browsing         |  
+| 8      | Store Browsing                  |  
+| 9      | Store Timings Inquiry           |  
+
+**Objective**  
+The primary objective was to classify customer queries into the above categories using a deep learning model, enabling Poseidon to respond effectively to customer needs.
+
+---
+
+## **Approach**  
+
+### **Data Processing**  
+Customer queries were treated as text data, and the tags served as the target classification labels. The processed text data was used to train a machine learning model.  
+
+### **Model Architecture**  
+An **LSTM (Long Short-Term Memory)** network, a type of Recurrent Neural Network (RNN), was employed for this task due to its ability to process sequential data effectively. LSTM networks are particularly well-suited for text analysis as they:  
+- Retain important information from earlier steps in the sequence.  
+- Handle long-term dependencies better than standard RNNs.  
+
+---
+
+## **Model Training and Evaluation**  
+
+### **Training Process**  
+The model was trained on the labeled dataset, and its performance was monitored using training and validation loss curves.  
+
+### **Results**  
+- **Validation Accuracy**: The model achieved a solid **83.98% accuracy** on the validation set.  
+- **Insights**: The training and validation loss plots indicated effective learning with minimal overfitting.  
+
+---
+
+## **Conclusion**  
+The LSTM model successfully classified customer queries into intent tags, demonstrating its potential to enhance Poseidon’s chatbot accuracy and customer satisfaction. Future improvements could include:  
+- Incorporating attention mechanisms for better context understanding.  
+- Expanding the dataset to include more diverse interactions.  
